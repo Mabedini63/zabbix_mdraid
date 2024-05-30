@@ -29,19 +29,34 @@ Append to zabbix_agentd.conf file
 Note
 ----
 **don't forget to add zabbix user to sudoers**
+add sudo Groups:
+```
+groupadd sudo
+usermod -aG sudo zabbix
+```
+```
+visudo
+```
+Add This Line:
 
-
-Referrence:
+```
+%sudo  ALL=(ALL)       NOPASSWD: ALL
+```
 -------
 Note
 ----
-**In Redhat base you must diactive SELinux **
+**In Redhat base you must diactive SELinux**
 
 ```
 setenforce 0
 ```
-
-
+Note
+----
+**In Redhat base you must add firewall rouls:
+```
+firewall-cmd --add-port=10050/tcp --permanent 
+firewall-cmd --reload
+```
 Referrence:
 -------
 - https://www.kernel.org/doc/Documentation/md.txt
