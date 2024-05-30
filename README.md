@@ -52,7 +52,7 @@ setenforce 0
 ```
 Note
 ----
-**In Redhat base you must add firewall rouls:
+**In Redhat base you must add firewall rouls:**
 ```
 firewall-cmd --add-port=10050/tcp --permanent 
 firewall-cmd --reload
